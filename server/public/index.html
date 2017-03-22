@@ -6,11 +6,13 @@
     <title>PG Intro</title>
     <script type="text/javascript" src="vendors/jquery.js"></script>
     <script type="text/javascript" src="scripts/client.js"></script>
+    <link rel="stylesheet" href="/views/style.css">
 </head>
 
 <body>
     <h1>Book Shelf</h1>
 
+    <h3 id="formTitle"></h3>
     <form id="bookForm">
         <input type="text" placeholder="title " name="title" id="title">
         <input type="text" placeholder="author " name="author" id="author">
@@ -26,7 +28,9 @@
                 <th>Author</th>
                 <th>Title</th>
                 <th>Year</th>
-                <th>Publisher</th>
+                <!-- <th>Publisher</th> -->
+                <th>Delete</th>
+                <th>Edit</th>
             </tr>
         </thead>
         <!-- this is where we will append to -->
