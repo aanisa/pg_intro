@@ -16,12 +16,12 @@
 - [X] Add AJAX call to GET our books (print to console)
 - [X] Append books to DOM
 - [X] Create html form
-- [] AJAX call to POST the from data
+- [X] AJAX call to POST the from data
 
 **Server**
-- [] Set up our POST route in node and log data
-- [] Create INSERT query in Postico   //make sure this query is correct before add to pg
-- [] Use 'pg' to wrote the data to the DB
+- [X] Set up our POST route in node and log data
+- [X] Create INSERT query in Postico    //make sure this query is correct before add to pg
+- [X] Use 'pg' to write the data to the DB
 
 **Client**
 - [] Refresh our UI after a book is added

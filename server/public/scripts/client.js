@@ -21,7 +21,6 @@ $(document).ready(function() {
     type: "GET",
     url: "/books",
     success: function(response) {
-      console.log(response);
       for (var i = 0; i < response.length; i++) {
       var book =  response[i];
       $('#books').append('<tr></tr>');
