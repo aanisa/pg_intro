@@ -22,9 +22,7 @@ router.get('/', function(req, res) {
             console.log("Error connecting to database!");
             res.send(500);
         } else { //we connected!
-            db.query('INSERT INTO "books" ("author", "title")'+
-                     'VALUES ($1,$2)',    //this will be where author and title will go. then will pass in an array
-                      [author, title], function(queryError, result) {
+            db.query('SELECT * FROM "books"', function(queryError, result) {
                 done();
                 if (queryError) {
                     console.log('Error making query!');
@@ -47,7 +45,9 @@ router.post("/add", function(req, res){   ///we will post to add
           console.log("Error connecting to database!");
           res.send(500);
       } else { //we connected!
-          db.query('SELECT * FROM "books"', function(queryError, result) {
+        db.query('INSERT INTO "books" ("author", "title")'+
+                 'VALUES ($1,$2)',    //this will be where author and title will go. then will pass in an array
+                  [author, title], function(queryError, result) {
               done();
               if (queryError) {
                   console.log('Error making query!');
