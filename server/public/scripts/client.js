@@ -5,13 +5,16 @@ $(document).ready(function() {
     event.preventDefault();
     var title = $('#title').val();
     var author = $('#author').val();
-    console.log(title, author);
+    var year = $('#year').val();
+    var publisher = $('#publisher').val();
+    console.log(title, author, year, publisher);
 
     $.ajax({
       type: "POST",
       url: "/books/add",
-      data: {title: title, author: author},
+      data: {title: title, author: author, year: year, publisher: publisher},
       success: function(response) {
+        console.log(response);
         getBooks();
       }
     });
@@ -32,6 +35,8 @@ function getBooks() {
       $el.append('<td>' + book.id + '</td>');
       $el.append('<td>' + book.author + '</td>');
       $el.append('<td>' + book.title + '</td>');
+      $el.append('<td>' + book.year + '</td>');
+      $el.append('<td>' + book.publisher + '</td>');
       }
     }
     });
