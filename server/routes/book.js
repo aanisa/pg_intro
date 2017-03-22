@@ -36,4 +36,8 @@ router.get('/', function(req, res) {
     });
 });
 
+router.post("/add", function(req, res){   ///we will post to add
+  console.log(req.body);
+});
+
 module.exports = router;

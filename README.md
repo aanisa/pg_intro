@@ -13,9 +13,9 @@
       //once we have this, we will be able to retrieve data from DB
 
 **Client**
-- [] Add AJAX call to GET our books (print to console)
-- [] Append books to DOM
-- [] Create html form
+- [X] Add AJAX call to GET our books (print to console)
+- [X] Append books to DOM
+- [X] Create html form
 - [] AJAX call to POST the from data
 
 **Server**

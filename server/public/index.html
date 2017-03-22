@@ -10,17 +10,24 @@
 
 <body>
     <h1>Book Shelf</h1>
+
+    <form id="bookForm">
+        <input type="text" placeholder="title " name="title" id="title">
+        <input type="text" placeholder="author " name="author" id="author">
+        <input type="submit" value="Submit">
+    </form>
+
     <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Author</th>
-          <th>Title</th>
-        </tr>
-      </thead>
-      <!-- this is where we will append to -->
-      <tbody id="books">
-      </tbody>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <!-- this is where we will append to -->
+        <tbody id="books">
+        </tbody>
     </table>
 </body>
 
