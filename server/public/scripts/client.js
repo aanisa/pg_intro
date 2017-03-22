@@ -6,21 +6,33 @@ $(document).ready(function() {
 
     $('#books').on('click', '.delete', function() {
         console.log('Delete' + $(this).data('book')); ///able to delete book with specific id. check to make sure it's refering to right id
-        // $.ajax({
-        //   type: 'DELETE',
-        //   url: books/delete + id
-        // });
+
+        $.ajax({
+          type: 'DELETE',
+          url: 'books/delete' ,
+          success: function (response) {
+            console.log('delete this book');
+            console.log(response);
+          }
+        });
+        getBooks();
     });
 
 
     $('#books').on('click', '.edit', function() { //stashing this data so it can fill in information later
         editing = true;
-        ('#formTitle').text("you are now editing...");
-        // console.log($(this).data('book'));
-        // console.log($(this).data('author'));
-        // console.log($(this).data('title'));
-        $('#title').val($(this).data('title')); //immediately adds author name into input field
-        $('#author').val($(this).data('author'));
+        $('#formTitle').text("you are now editing...");
+        var editTitle = $('#title').val($(this).data('title'));      //immediately adds author name into input field
+        var editAuthor = $('#author').val($(this).data('author'));
+
+        $.ajax({
+          type: 'PUT',
+          url: '/books/edit',
+          success: function(response) {
+            console.log('edit edit edit');
+            console.log(response);
+          }
+        });
     });
 
     $('#bookForm').on('submit', function(event) {
@@ -65,7 +77,6 @@ function getBooks() {
         type: "GET",
         url: "/books",
         success: function(response) {
-            // $('#books').empty();
             $('#books').empty();
             for (var i = 0; i < response.length; i++) {
                 var book = response[i];
