@@ -2,25 +2,26 @@
 
 ##Checklist
 **Server**
-- [ ] Setup node ('npm init')
-- [ ] Add modules ( express, body-parser, pg, jquery)
-- [ ] Folder Structure
-- [ ] Setup initial route
-- [ ] Create database table (Postico)
-- [ ] Create SELECT query (Postico)
-- [ ] Create GET route
-- [ ] Add 'pg' to GET route    //once we have this, we will be able to retrieve data from DB
+- [X] Setup node ('npm init')
+- [X] Add modules ( express, body-parser, pg, jquery)
+- [X] Folder Structure
+- [X] Setup initial route (express.static)
+- [X] Create database table (Postico)
+- [X] Create SELECT query (Postico)
+- [X] Create GET route
+- [X] Add 'pg' to GET route    
+      //once we have this, we will be able to retrieve data from DB
 
 **Client**
-- [ ] Add AJAX call to GET our books (print to console)
-- [ ] Append books to DOM
-- [ ] Create html form
-- [ ] AJAX call to POST the from data
+- [] Add AJAX call to GET our books (print to console)
+- [] Append books to DOM
+- [] Create html form
+- [] AJAX call to POST the from data
 
 **Server**
-- [ ] Set up our POST route in node and log data
-- [ ] Create INSERT query in Postico   //make sure this query is correct before add to pg
-- [ ] Use 'pg' to wrote the data to the DB
+- [] Set up our POST route in node and log data
+- [] Create INSERT query in Postico   //make sure this query is correct before add to pg
+- [] Use 'pg' to wrote the data to the DB
 
 **Client**
-- [ ] Refresh our UI after a book is added
+- [] Refresh our UI after a book is added
