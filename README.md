@@ -24,4 +24,4 @@
 - [X] Use 'pg' to write the data to the DB
 
 **Client**
-- [] Refresh our UI after a book is added
+- [X] Refresh our UI after a book is added

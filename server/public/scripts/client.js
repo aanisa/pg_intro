@@ -12,15 +12,19 @@ $(document).ready(function() {
       url: "/books/add",
       data: {title: title, author: author},
       success: function(response) {
-
+        getBooks();
       }
     });
   });
+getBooks();
+});
 
+function getBooks() {
   $.ajax({
     type: "GET",
     url: "/books",
     success: function(response) {
+      // $('#books').empty();
       for (var i = 0; i < response.length; i++) {
       var book =  response[i];
       $('#books').append('<tr></tr>');
@@ -31,4 +35,4 @@ $(document).ready(function() {
       }
     }
     });
-});
+}
