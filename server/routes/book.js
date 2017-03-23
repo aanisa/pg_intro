@@ -22,7 +22,7 @@ router.get('/', function(req, res) {
             console.log("Error connecting to database!");
             res.send(500);
         } else { //we connected!
-            db.query('SELECT * FROM "books"', function(queryError, result) {
+            db.query('SELECT * FROM "books" ORDER BY "id" DESC', function(queryError, result) {
                 done();
                 if (queryError) {
                     console.log('Error making query!');
@@ -63,11 +63,6 @@ router.post("/add", function(req, res) { ///we will post to add
     });
 });//end
 
-router.delete("/delete", function(req, res) {
-  console.log('Book Deleted');
-
-
-});
 
 router.put("/edit", function(req, res) {
   console.log('Book Edited');
@@ -76,6 +71,7 @@ router.put("/edit", function(req, res) {
   var year = req.body.year;
   var publisher = req.body.publisher;
   var id = req.body.id;
+  // console.log(req.body);
 
   pool.connect(function(errorConnectingToDatabase, db, done) {
       if (errorConnectingToDatabase) {
@@ -83,19 +79,46 @@ router.put("/edit", function(req, res) {
           res.send(500);
       } else {
           db.query('UPDATE "books" SET "author" = $1, "title" = $2, "year" = $3, "publisher" = $4 WHERE "id"=$5',
-              [author, title, year, publisher,id],
+              [author, title, year, publisher, id],
               function(queryError, result) {
                   done();
                   if (queryError) {
                       console.log('Error making query!');
                       res.send(500);
                   } else {
+                      console.log(result.rows); //what is this??? just an empty array
                       res.send(result.rows);
                   }
               });
       }
   });
-});
+});//end
+
+router.delete("/delete/:id/", function(req, res) {
+  console.log('Book Deleted');
+//when using delete, use req.params not req.body...because body is data that is specified in AJAX request. delete doesn't have data parameter
+  var id = req.params.id;
+  // console.log(id);
+  pool.connect(function(errorConnectingToDatabase, db, done) {
+      if (errorConnectingToDatabase) {
+          console.log("Error connecting to database!");
+          res.send(500);
+      } else {
+          db.query('DELETE FROM "books" WHERE "id"=$1',
+              [id],
+              function(queryError, result) {
+                  done();
+                  if (queryError) {
+                      console.log('Error making query!');
+                      res.send(500);
+                  } else {
+                    res.send('Delete Successful!'); //Need to send something back or else AJAX success function won't run
+                  }
+              });
+      }
+  });
+
+});//end
 
 
 
