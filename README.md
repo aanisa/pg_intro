@@ -1,6 +1,6 @@
 # Prime Digital Academy - Full Stack PG Intro
 
-##Checklist
+## Checklist
 **Server**
 - [X] Setup node ('npm init')
 - [X] Add modules ( express, body-parser, pg, jquery)
