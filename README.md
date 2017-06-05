@@ -1,4 +1,4 @@
-# Full Stack using PG
+# Prime Digital Academy - Full Stack PG Intro
 
 ##Checklist
 **Server**
